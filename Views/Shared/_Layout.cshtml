@@ -1,0 +1,37 @@
+﻿<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div id="main">
+     
+    <div id="header">
+        <div class="row-1">
+          <div class="fleft"><a href="#">Cinema <span>World</span></a></div>
+          <ul>
+            <li><a href="#"><img src="~/Images/icon1-act.gif" alt="" /></a></li>
+            <li><a href="#"><img src="~/Images/icon2.gif" alt="" /></a></li>
+            <li><a href="#"><img src="~/Images/icon3.gif" alt="" /></a></li>
+          </ul>
+        </div>
+        <div class="row-2">
+          <ul>
+            <li><a href="/Home/index" class="active">Home</a></li>
+            <li><a href="/Home/aboutUs">About</a></li>
+            <li><a href="/Home/articles">Articles</a></li>
+            <li><a href="/Home/contactUs">Contacts</a></li>
+            <li class="last"><a href="/Home/sitemap">Sitemap</a></li>
+          </ul>
+        </div>
+      </div>
+        </div
+    @RenderBody()
+
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

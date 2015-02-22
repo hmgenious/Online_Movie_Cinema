@@ -1,0 +1,79 @@
+﻿@model onlineCinemaTicketBooking.Models.movie
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<title>Cinema World</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="~/Content/style.css" rel="stylesheet" type="text/css" />
+<script src="~/Script/jquery-1.4.2.min.js" type="text/javascript"></script>
+<script src="~/Script/cufon-yui.js" type="text/javascript"></script>
+<script src="~/Script/cufon-replace.js" type="text/javascript"></script>
+<script src="~/Script/Gill_Sans_400.font.js" type="text/javascript"></script>
+<script src="~/Script/script.js" type="text/javascript"></script>
+<!--[if lt IE 7]>
+<script type="text/javascript" src="js/ie_png.js"></script>
+<script type="text/javascript">ie_png.fix('.png, .link1 span, .link1');</script>
+<link href="css/ie6.css" rel="stylesheet" type="text/css" />
+<![endif]-->
+    
+    <div class="tail-top">
+  <div class="tail-bottom">
+    <div id="main">
+        
+        <h3>Update Movie</h3>
+@using (Html.BeginForm("edit", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    
+ @Html.HiddenFor(model => model.Id)
+    @Html.HiddenFor(model => model.Image)
+    @Html.HiddenFor(model => model.UId)
+    @Html.HiddenFor(model => model.user)
+    @Html.ValidationSummary(true)
+
+<div class="editor-label">
+            @Html.LabelFor(model => model.Name)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.Name)
+            @Html.ValidationMessageFor(model => model.Name)
+           
+        </div>
+<div class="editor-label">
+            @Html.LabelFor(model => model.Description)
+
+        </div>
+        <div class="editor-field">
+            @Html.TextAreaFor(model => model.Description)
+             @Html.ValidationMessageFor(model => model.Description)
+           
+        </div>
+
+<div class="editor-label">
+            @Html.LabelFor(model => model.Price)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.Price)
+             @Html.ValidationMessageFor(model => model.Price)
+</div>
+    <div class="editor-label">
+        <label for="exampleInputFile">Upload Image</label>
+
+    </div>
+    <div class="editor-field">
+        <input type="file" name="image" id="exampleInputFile" data-val="true" data-val-required="This must be a Image"/>
+                     <span class="field-validation-valid" data-valmsg-for="image" data-valmsg-replace="true"></span>
+    </div>
+      <input type="submit" value="Update" />
+            
+    
+}
+<div>
+   <form action="/Admin/index" method="post">
+       <input type="submit" value="Back" />
+
+   </form>
+</div>
+        </div>
+      </div>
+        </div>
+    </html>
